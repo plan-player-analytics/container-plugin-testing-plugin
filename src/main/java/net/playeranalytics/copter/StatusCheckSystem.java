@@ -14,7 +14,7 @@ public class StatusCheckSystem {
     public StatusCheckSystem(PluginStatusAccessor pluginStatusAccessor) {
         this.pluginStatusAccessor = pluginStatusAccessor;
         this.serverStatusAccessor = new BasicServerStatusAccessor();
-        this.webserver = new JettyWebserver();
+        this.webserver = new JettyWebserver(this);
 
     }
 
