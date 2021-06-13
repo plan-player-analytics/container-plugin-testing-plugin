@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.playeranalytics</groupId>
+    <artifactId>container-plugin-testing-plugin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <!-- Platforms -->
+
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>sponge-repo</id>
+            <url>https://repo.spongepowered.org/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>bungeecord-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+        <repository>
+            <id>velocity-repo</id>
+            <url>https://repo.velocitypowered.com/snapshots/</url>
+        </repository>
+        <repository>
+            <id>nukkit-snapshots-repo</id>
+            <url>https://repo.opencollab.dev/maven-snapshots/</url>
+        </repository>
+        <repository>
+            <id>nukkit-releases-repo</id>
+            <url>https://repo.opencollab.dev/maven-releases/</url>
+        </repository>
+
+        <repository>
+            <id>plan-repo</id>
+            <url>https://repo.playeranalytics.net/releases</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Platforms -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spongepowered</groupId>
+            <artifactId>spongeapi</artifactId>
+            <version>7.3.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.16-R0.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.velocitypowered</groupId>
+            <artifactId>velocity-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.nukkit</groupId>
+            <artifactId>nukkit</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Abstraction API -->
+        <dependency>
+            <groupId>net.playeranalytics</groupId>
+            <artifactId>platform-abstraction-layer-api</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.playeranalytics</groupId>
+            <artifactId>platform-abstraction-layer-bukkit</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.playeranalytics</groupId>
+            <artifactId>platform-abstraction-layer-bungeecord</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.playeranalytics</groupId>
+            <artifactId>platform-abstraction-layer-sponge</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.playeranalytics</groupId>
+            <artifactId>platform-abstraction-layer-velocity</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.playeranalytics</groupId>
+            <artifactId>platform-abstraction-layer-nukkit</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>plan-repo</id>
+            <url>https://repo.playeranalytics.net/releases</url>
+        </repository>
+    </distributionManagement>
+</project>

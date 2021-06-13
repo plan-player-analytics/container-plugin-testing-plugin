@@ -1,0 +1,4 @@
+name: container-plugin-testing
+author: AuroraLS3
+main: net.playeranalytics.copter.BungeeBootstrap
+version: "1.0"

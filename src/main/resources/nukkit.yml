@@ -1,0 +1,5 @@
+name: container-plugin-testing
+author: AuroraLS3
+main: net.playeranalytics.copter.NukkitBootstrap
+version: "1.0"
+api: [ "1.0.5" ]
