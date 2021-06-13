@@ -9,7 +9,6 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import org.eclipse.jetty.util.thread.QueuedThreadPool;
 
 public class JettyWebserver {
 
@@ -18,7 +17,7 @@ public class JettyWebserver {
 
     public JettyWebserver(StatusCheckSystem system) {
         this.system = system;
-        server = new Server(new QueuedThreadPool());
+        server = new Server(7777);
 
         Connector connector = new ServerConnector(server);
         server.addConnector(connector);
@@ -40,6 +39,7 @@ public class JettyWebserver {
                 resp.setStatus(system.getPluginStatusAccessor().isEnabled(pluginName) ? 200 : 404);
             }
         }), "/plugin");
+        server.setHandler(servletHandler);
         server.start();
     }
 
