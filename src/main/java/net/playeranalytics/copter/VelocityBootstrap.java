@@ -5,6 +5,7 @@ import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.ProxyServer;
+import net.playeranalytics.copter.platform.plugin.VelocityPluginStatusAccessor;
 import net.playeranalytics.plugin.PlatformAbstractionLayer;
 import net.playeranalytics.plugin.VelocityPlatformLayer;
 import org.slf4j.Logger;
@@ -22,6 +23,7 @@ public class VelocityBootstrap {
     private final Path dataFolder;
 
     private PlatformAbstractionLayer abstractionLayer;
+    private StatusCheckSystem system;
 
     @com.google.inject.Inject
     public VelocityBootstrap(
@@ -37,6 +39,16 @@ public class VelocityBootstrap {
     @Subscribe
     public void onProxyStart(ProxyInitializeEvent event) {
         abstractionLayer = new VelocityPlatformLayer(this, proxy, slf4jLogger, dataFolder);
+
+        VelocityPluginStatusAccessor pluginStatus = new VelocityPluginStatusAccessor(proxy.getPluginManager());
+        system = new StatusCheckSystem(pluginStatus);
+
+        try {
+            system.enable();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        system.getServerStatusAccessor().setServerAsStarted();
     }
 
 }

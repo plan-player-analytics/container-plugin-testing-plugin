@@ -111,6 +111,13 @@
             <artifactId>platform-abstraction-layer-nukkit</artifactId>
             <version>5.0.0</version>
         </dependency>
+
+        <!-- Jetty -->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>11.0.3</version>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
